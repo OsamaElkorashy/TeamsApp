@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeamsApi;
 
 namespace TeamsApi.Migrations
 {
     [DbContext(typeof(TeamsContext))]
-    partial class TeamsContextModelSnapshot : ModelSnapshot
+    [Migration("20210829201202_Auth")]
+    partial class Auth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,7 +167,7 @@ namespace TeamsApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nationality")
+                    b.Property<string>("Nationaity")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("TeamId")
